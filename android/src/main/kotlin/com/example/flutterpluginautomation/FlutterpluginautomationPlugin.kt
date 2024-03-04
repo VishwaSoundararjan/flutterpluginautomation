@@ -7,6 +7,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import com.vtsen.sydneysuburbs.AndroidModFile
 
 
 /** FlutterpluginautomationPlugin */
@@ -27,7 +28,7 @@ class FlutterpluginautomationPlugin: FlutterPlugin, MethodCallHandler {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
     } else if (call.method == "getRandromString"){
-      result.success("Android - Msg from Anroid - 01010")
+      result.success(AndroidModFile.getVersion())
     }else {
       result.notImplemented()
     }

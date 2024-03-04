@@ -16,7 +16,7 @@ A new Flutter project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
-  s.dependency 'RSSIOS:5g7a2e8e_1bdb_9d28_278a2759dfe3c'
+  s.dependency 'RSSIOS_5g7a2e8e_1bdb_9d28_278a2759dfe3c'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
