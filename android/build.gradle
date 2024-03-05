@@ -71,7 +71,8 @@ android {
     }
 
     dependencies {
-        implementation 'com.github.VishwaSoundararjan:5g7a2e8e_1bdb_9d28_278a2759dfe3c:-SNAPSHOT'
+        implementation 'com.github.VishwaSoundararjan:RssAndroid_5g7a2e8e_1bdb_9d28_278a2759dfe3c:-SNAPSHOT'
+        //implementation 'com.github.VishwaSoundararjan:5g7a2e8e_1bdb_9d28_278a2759dfe3c:-SNAPSHOT'
         testImplementation 'org.jetbrains.kotlin:kotlin-test'
         testImplementation 'org.mockito:mockito-core:5.0.0'
     }
