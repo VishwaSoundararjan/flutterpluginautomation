@@ -10,12 +10,12 @@ Pod::Spec.new do |s|
 A new Flutter project.
                        DESC
   s.homepage         = 'http://example.com'
-  s.license          = { :file => '../LICENSE' }
+  s.license          = { :file => '../LICENSE' }	
   s.author           = { 'Your Company' => 'email@example.com' }
-  s.source           = { :path => '.' }
+  s.source           = { :path => '.'}
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.platform = :ios, '11.0'
+  s.platform = :ios, '12.0'
   s.dependency 'RSSIOSSDK_5g7a2e8e_1bdb_9d28_278a2759dfe3c'
 
   # Flutter.framework does not contain a i386 slice.
