@@ -23,12 +23,9 @@ abstract class FlutterpluginautomationPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
 
-  Future<String?> getRandromString() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  getVersion() {
+    throw UnimplementedError('getVersion has not been implemented.');
   }
 
 }

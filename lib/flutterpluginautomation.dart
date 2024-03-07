@@ -1,11 +1,19 @@
-
+import 'package:flutter/foundation.dart';
 import 'flutterpluginautomation_platform_interface.dart';
+import 'flutterpluginautomation_web.dart';
 
 class Flutterpluginautomation {
-  Future<String?> getPlatformVersion() {
-    return FlutterpluginautomationPlatform.instance.getPlatformVersion();
+
+   getRandromString()  {
+    if(kIsWeb){
+      return FluttersdkWeb.getWebVersion();
+    }else {
+      return  FlutterpluginautomationPlatform.instance.getVersion();
+    }
   }
-  Future<String?> getRandromString() {
-    return FlutterpluginautomationPlatform.instance.getRandromString();
+  initWebSdk(){
+    if(kIsWeb){
+      FluttersdkWeb.initWebSdk();
+    }
   }
 }

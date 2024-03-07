@@ -10,13 +10,7 @@ class MethodChannelFlutterpluginautomation extends FlutterpluginautomationPlatfo
   final methodChannel = const MethodChannel('flutterpluginautomation');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
-  }
-  @override
-  Future<String?> getRandromString() async {
-    final version = await methodChannel.invokeMethod<String>('getRandromString');
-    return version;
+  getVersion()  {
+    return   methodChannel.invokeMethod<String>('getRandromString');
   }
 }

@@ -22,21 +22,17 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+  _flutterpluginautomationPlugin.initWebSdk();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
-    String nativeData;
+    String? nativeData;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion =
-          await _flutterpluginautomationPlugin.getPlatformVersion() ?? 'Unknown platform version';
       nativeData =  await _flutterpluginautomationPlugin.getRandromString() ?? 'Unknown';
     } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
       nativeData = 'unable to get data form native';
     }
 
@@ -46,25 +42,33 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
-      _nativeData = nativeData;
+      _nativeData = nativeData!;
     });
+  }
+  getSdkVersion(){
+    initPlatformState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              Text('Running on: $_platformVersion\n'),
-              const SizedBox(height: 10,),
-              Text('Native Data: $_nativeData\n'),
-            ],
+    return SafeArea(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 20,),
+                ElevatedButton(onPressed: (){
+                  getSdkVersion();
+                }, child: const Text('Get Sdk Version')),
+                const SizedBox(height: 20,),
+                Text('SDK Version :: $_nativeData\n'),
+              ],
+            ),
           ),
         ),
       ),
