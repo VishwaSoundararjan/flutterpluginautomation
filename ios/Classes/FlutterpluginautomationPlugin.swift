@@ -12,6 +12,9 @@ public class FlutterpluginautomationPlugin: NSObject, FlutterPlugin {
     switch call.method {
     case "getPlatformVersion":
       result("iOS " + UIDevice.current.systemVersion)
+          case "getRandromString":
+        print("Received iOS SDK versionk" + IOSSDK.getVersion())
+        result(IOSSDK.getVersion())
     default:
       result(FlutterMethodNotImplemented)
     }
