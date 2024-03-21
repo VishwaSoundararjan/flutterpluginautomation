@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import RSSIOSSDK
 
 public class FlutterpluginautomationPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
